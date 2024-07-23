@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PinkSoul Doc</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/3907a8b22d.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    
+    <section class="section">
+      <div class="container">
+        <nav class="navbar" role="navigation">
+          <div class="navbar-brand">
+            <a class="navbar-burger" data-target="navMenu" role="button" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+
+              <div class="navbar-start">
+                <a href="raw.html" class="button is-rounded is-text">Raw text</a>
+              </div>
+              
+            </div>
+            <div class="navbar-end">
+              <a href="https://github.com/jp222343/PinkSoulLibrary" class="button is-large is-outline">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+
+         
+          const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+       
+          $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+
+              
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+
+            
+              el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
+              $target.classList.toggle('is-inline-flex');
+
+            });
+          });
+
+          });
+        </script>
+        <hr>
+        <h1 class="title">
+          PinkSoulLibrary Remake documentation WebPage (v0.8)
+        </h1>
+        <br>
+        <p class="subtitle">
+          (Work in progress!)
+        </p>
+       
+        <br>
+        
+
+        
+        
+
+        <div id="AllDoc">
+          <h1 class="title">PinkSoulLibrary Remake</h1>
+          <blockquote class="notification is-warning">
+              <p><strong>WARNING</strong></p>
+              <h2 class="subtitle">If you are using CYF v0.6.6 LTS2, then download v0.8 LTS2 compatible.</h2>
+              <h2 class="subtitle">If you are using CYF v0.6.6 LTS3, then download the LTS3 v0.8 version.</h2>
+              <h6>Don't know how to install CYF v0.6.6 LTS3 version? <a href="https://github.com/RhenaudTheLukark/CreateYourFrisk/releases/tag/v0.6.6.3">Download it here</a></h6>
+          </blockquote>
+          <h3 class="subtitle">More updates soon!</h3>
+          <div class="tags">
+              <span class="tag is-warning">version 0.8</span>
+              <span class="tag is-primary">by jp222343</span>
+              <span class="tag is-success">credits u/Kayakazan</span>
+          </div>
+          
+          <h1 class="title">The Pink Soul Library Remake</h1>
+          <p class="subtitle"><strong>"Pink Soul : Defend yourself...in rhythm ! (Kinda)" - u/Kayakazan, 2015.</strong></p>
+          <ul>
+              <li>This library is a remake of the first Pink Soul library created back in <strong>2015</strong>. The original owner is <strong>u/Kayakazan</strong>, so all the credits should be given to him.</li>
+          </ul>
+          
+          <h2 class="subtitle">Why did I make this library?</h2>
+          <ul>
+              <li>I made it due to the original library being removed from its uploaded page, so I decided to recreate it based on the <a href="https://www.youtube.com/watch?v=wGoT2A1yR6w">video</a> that was left on YouTube about it.</li>
+          </ul>
+          
+          <h1 class="title">Preview (v0.8 - Small Arena)</h1>
+          <div class="card" id="previewcard">
+            <video width="320" height="240" controls>
+              <source src="https://jp222343.github.io/PinkSoulLibrary/assets/preview/video-v0.8-smallarena.mp4" type="video/mp4">
+            </video> 
+          </div>
+          
+          <h1 class="title">Preview (v0.8 - Big Arena)</h1>
+          <div class="card" id="previewcard">
+            <video width="320" height="240" controls>
+              <source src="https://jp222343.github.io/PinkSoulLibrary/assets/preview/video-v0.8-bigarena.mp4" type="video/mp4">
+            </video> 
+          </div>
+          <hr>
+          
+          <h1 class="title">How to use the library</h1>
+          <h6 class="subtitle">If you don't know how to install libraries, I recommend searching before doing these.</h6>
+          
+          <ol>
+              <li>Download the library on the releases tab. (Make sure to download the latest version)</li>
+              <li>Extract the zip file, open the <strong>"PinkSoulLibrary"</strong> folder and put all the other folders in the desired place of your mod (Lua, Audio, and Sprites) - Make sure the subfolders are also in the correct place.</li>
+              <li>Follow the next instructions:</li>
+          </ol>
+          
+          <h1 class="title">Inserting the library on a new wave</h1>
+          <p>If you want to put the library on a new wave, follow these instructions:</p>
+          
+          <ol>
+              <li>Import the library by placing this at the top of your wave script:
+                  <pre><code>local PinkSoulLibrary = require("Libraries/pinksoul")</code></pre>
+                  <p>If you get an error, it might be because the library isn't in the correct folder (Libraries) or because you renamed the Library Lua file and/or folder.</p>
+              </li>
+              <li><strong>(Variables)</strong> (Optional) - Here are the custom variables you can add to the library:</li>
+          </ol>
+          
+          <h5 class="subtitle">Cooldown warning (true or false)</h5>
+          <pre><code>PinkSoulLibrary.cooldownwarning(true)</code></pre>
+          <p>Use <strong>true</strong> to enable (Default) or <strong>false</strong> to disable the cooldown warning.</p>
+          
+          <h5 class="subtitle">Arena size (1 or 2)</h5>
+          <pre><code>PinkSoulLibrary.arenasize(1)</code></pre>
+          <p>Arena size. 1 is the default (Small arena), 2 is wider (Big arena).</p>
+          
+          <ol start="3">
+              <li>Call the library by inserting this line somewhere in your script (DON'T INSERT IT INSIDE AN Update() FUNCTION):
+                  <pre><code>PinkSoulLibrary.PinkSoul()</code></pre>
+                  <p>-- Parameters (Optional): <code>mainy, lettery, maxrandomspeed, delay</code></p>
+                  <p>The Parameters are explained <a href="https://github.com/jp222343/PinkSoulLibrary/blob/main/README.md#the-attack-function-1">here</a> (Scroll down to find them)</p>
+              </li>
+              <li>Add these blocks to make the library work correctly, or else you will get an <strong>error</strong>.
+                  <pre><code>
+-- DO NOT Remove this. If you need to use the Update() function, just add your code under the 'PinkSoulLibrary.Update()' line.
+function Update()
+  PinkSoulLibrary.Update()
+end
+
+-- DO NOT Remove this. If you need to use the OnHit() function, just add your code under the 'PinkSoulLibrary.OnHit(bullet)' line.
+function OnHit(bullet)
+  PinkSoulLibrary.OnHit(bullet)
+end
+                  </code></pre>
+                  <p><strong>After that, you're ready to go! But before that, read the next instructions:</strong></p>
+              </li>
+          </ol>
+          
+          <h2 class="subtitle">The attack function</h2>
+          <p>In the library example waves folder (if you're using it), you'll see a file called <code>pinkattack.lua</code>, and it has many important functions.</p>
+          
+          <h3 class="subtitle">The attack function</h3>
+          <p>The attack function is the main function, and you can insert <strong>optional</strong> parameters on it. The parameters need to be put in this order:
+              <pre><code>PinkSoulLibrary.PinkSoul(mainy, lettery, maxrandomspeed, delay)</code></pre>
+          </p>
+          
+          <p><strong>Here is the explanation of the parameters:</strong></p>
+          <table class="table is-striped is-fullwidth">
+              <thead>
+                  <tr>
+                      <th>Parameter</th>
+                      <th>Explanation</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>mainy</td>
+                      <td>It's the <strong>y</strong> level of the Main Bullet (The pink thingy) - Default value is <strong>70</strong></td>
+                  </tr>
+                  <tr>
+                      <td>lettery</td>
+                      <td>This is the <strong>y</strong> level of where the letters are going to spawn - Default value is <strong>200</strong></td>
+                  </tr>
+                  <tr>
+                      <td>maxrandomspeed</td>
+                      <td>The letters spawn at different speeds, going from <strong>1</strong> to <strong>maxrandomspeed</strong> - Default value is <strong>3</strong></td>
+                  </tr>
+                  <tr>
+                      <td>delay</td>
+                      <td>Delay for the letter spawning. (⚠️ <strong>IT'S NOT IN SECONDS</strong>) - Default value is <strong>50</strong> (recommended)</td>
+                  </tr>
+              </tbody>
+          </table>
+          
+          <h2 class="subtitle">How to change the key letters</h2>
+          <p><strong>If you want to edit the letters, you'll also have to make the sprites. But don't worry, I left the entire font in the <em>'Sprites'</em> folder.</strong></p>
+          <blockquote class="notification is-warning">
+              <p><strong>WARNING</strong></p>
+              <p>The letters sprites size needs to be <strong>50x50</strong>!</p>
+          </blockquote>
+          
+          <p>If you are lazy to look for it, here it is:</p>
+          <div class="box">
+            <img src="https://github.com/jp222343/PinkSoulLibrary/raw/main/assets/preview/font.png" width="300" height="300">
+          </div>
+          <strong>Don't forget to edit the Library's code if you want to change the keys, i marked all the lines that you have to edit to make your custom keys work!
+          </strong>
+          <br><br>
+          <strong>If you don't know the key ID's, check the <a href="https://docs.unity3d.com/2018.4/Documentation/ScriptReference/KeyCode.html">Unity KeyCode documentation</a>, it contains all the Key IDs that you need.</strong>
+          <pre><code>if Input.GetKey("A") then</code></pre>
+          <strong><p>If you put it in lower case it won't work.</p></strong>
+          
+          <hr>
+          
+          <h2 class="title">Here is the full wave code if you are lazy (Make sure you have the library installed) (You won't need this if you have the library's default wave code):</h2>
+          <pre><code>
+-- Pink Soul remake
+-- Example attack
+-- By: jp222343 Credits to u/Kayakazan
+
+-- ✍️ If you want to edit the letters, you'll also have to make the sprites. But don't worry, I left the entire font in the 'Sprites' folder.
+-- The letter sprite image size has to be 50x50.
+
+--[[
+
+!!!!!!!!!!!!!!!!!!!!!!
+PinkSoulLibrary V0.8 FOR CYF V0.6.6 >>LTS3<< (Latest)
+!!!!!!!!!!!!!!!!!!!!!!
+
+]]
+
+local PinkSoulLibrary = require("Libraries/pinksoul")
+
+-- Enable or Disable the cooldown warning (This won't disable the cooldown, only the warning.):
+PinkSoulLibrary.cooldownwarning(true) -- Cooldown warning, use true to enable and false to disable. (This won't disable the cooldown, only the warning.)
+
+PinkSoulLibrary.arenasize(1) -- Arena size. 1 is the default, 2 is wider.
+
+-- This is how you call the attack | Optional Parameters: mainy, lettery, maxrandomspeed, delay
+-- They're all explained in <https://github.com/jp222343/PinkSoulLibrary>, but if you don't want to use them you can leave it blank and the Library will set the default values.
+PinkSoulLibrary.PinkSoul() -- Parameters (Optional): mainy, lettery, maxrandomspeed, delay
+
+--PinkSoulLibrary.PinkSoul(70, 200, 3, 50)     <-- Example Attack with the optional parameters (these are the default values)
+
+-- DO NOT Remove this. If you need to use the Update() function, just add your code under the 'PinkSoulLibrary.Update()' line.
+function Update()
+  PinkSoulLibrary.Update()
+end
+
+-- DO NOT Remove this. If you need to use the OnHit() function, just add your code under the 'PinkSoulLibrary.OnHit(bullet)' line.
+function OnHit(bullet)
+  PinkSoulLibrary.OnHit(bullet)
+end
+
+-- This library's idea is not mine, I just recreated it ;)
+          </code></pre>
+          
+          <h3 class="subtitle">And that's it! Feel free to edit or improve this library.</h3>
+          <h3 class="subtitle">All credits go to u/Kayakazan</h3>
+      </div>
+        </div>
+
+        <div id="content" class="box is-hidden">
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <hr>
+    <p class="subtitle">
+      <a href="https://github.com/jp222343/PinkSoulLibrary" class="button is-smal is-outline">
+        <span class="icon">
+          <i class="fab fa-github"></i>
+        </span>
+        <span>GitHub</span>
+      </a>
+    </p>
+  </body>
+</html>
